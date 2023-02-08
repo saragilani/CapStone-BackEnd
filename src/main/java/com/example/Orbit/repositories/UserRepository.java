@@ -16,8 +16,17 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
 
 
+}
 
+@Repository
 
+public interface UserRepository extends JpaRepository<User,Long> {
 
+    List<User> findUserById(Long id);
 
+    List<User> findUserByLocation(String location);
+
+    List<User> findUserByName(String name);
+
+    List<User> findUserByCaree(List<Caree> careeList);
 }
