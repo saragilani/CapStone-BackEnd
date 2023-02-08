@@ -32,4 +32,23 @@ public class CareeService {
     public List<Caree> findCareeByUniqueCode(String uniqueCode) {
         return careeRepository.findByUniqueCode(uniqueCode);
     }
+
+    public Caree createCaree(Caree caree) {
+        careeRepository.save(caree);
+        return caree;
+    }
+
+    public void deleteCaree(Long id) {
+        careeRepository.deleteById(id);
+    }
+
+    public Caree updateCaree(Long id, Caree caree) {
+        Caree updatedCaree = careeRepository.findById(id).get();
+        updatedCaree.setName(caree.getName());
+        updatedCaree.setAge(caree.getAge());
+        updatedCaree.setBio(caree.getBio());
+        updatedCaree.setNeedsList(caree.getNeedsList());
+        careeRepository.save(updatedCaree);
+        return updatedCaree;
+    }
 }
