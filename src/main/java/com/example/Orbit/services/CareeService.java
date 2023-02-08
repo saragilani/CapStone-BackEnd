@@ -29,7 +29,7 @@ public class CareeService {
         return careeRepository.findById(id);
     }
 
-    public Optional<Caree> findCareeByUniqueCode(Caree caree) {
-        return careeRepository.g
+    public List<Caree> findCareeByUniqueCode(String uniqueCode) {
+        return careeRepository.findByUniqueCode(uniqueCode);
     }
 }

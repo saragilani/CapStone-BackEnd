@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CareeRepository extends JpaRepository<Caree, Long> {
-//    List<Caree> findByUniqueCode(String uniqueCode);
+    List<Caree> findByUniqueCode(String uniqueCode);
 }
