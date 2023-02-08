@@ -27,16 +27,20 @@ public class Caree {
     @Column (name = "uniqueCode")
     private String uniqueCode;
 
-    @JsonIgnoreProperties("carees")
-    @OneToMany(mappedBy = "carees")
-    private List<Need> needsList;
+    @JsonIgnoreProperties("caree")
+    @OneToMany(mappedBy = "caree")
+//    private List<Need> needsList;
+    private List<Need> toDoList;
+
+    @ManyToMany(mappedBy = "careeListBelongingToUser")
+    private List<User> authorisedUsers;
 
     public Caree(String name, int age, String bio, String uniqueCode){
         this.name = name;
         this.age = age;
         this.bio = bio;
         this.uniqueCode = uniqueCode;
-        this.needsList = new ArrayList<>();
+        this.toDoList = new ArrayList<>();
     }
 
     public Caree(){}
@@ -81,11 +85,26 @@ public class Caree {
         this.uniqueCode = uniqueCode;
     }
 
-    public List<Need> getNeedsList() {
-        return needsList;
+    public List<Need> getToDoList() {
+        return toDoList;
     }
 
-    public void setNeedsList(List<Need> needsList) {
-        this.needsList = needsList;
+    public void setToDoList(List<Need> toDoList) {
+        this.toDoList = toDoList;
     }
+
+    public List<User> getAuthorisedUsers() {
+        return authorisedUsers;
+    }
+
+    public void setAuthorisedUsers(List<User> authorisedUsers) {
+        this.authorisedUsers = authorisedUsers;
+    }
+    //    public List<Need> getNeedsList() {
+//        return needsList;
+//    }
+//
+//    public void setNeedsList(List<Need> needsList) {
+//        this.needsList = needsList;
+//    }
 }

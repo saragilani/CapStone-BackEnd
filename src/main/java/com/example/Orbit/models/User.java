@@ -28,9 +28,16 @@ public class User {
     @Column(name="location")
     private String location;
 
-    @JsonIgnoreProperties("users")
-    @OneToMany(mappedBy = "users")
+    @JsonIgnoreProperties("user")
+    @OneToMany(mappedBy = "user")
     private List<Need> toDoList;
+
+    @ManyToMany
+    @JoinTable(
+            name="linked_carees_and_users",
+            joinColumns = @JoinColumn(name = "caree_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<Caree> careeListBelongingToUser;
 
     //
     public User(String name, String password, String emailAddress, String location){
