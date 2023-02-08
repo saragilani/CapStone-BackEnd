@@ -1,5 +1,8 @@
 package com.example.Orbit.repositories;
 
-public interface NeedRepository {
+import com.example.Orbit.models.Need;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface NeedRepository extends JpaRepository<Need, Long>{
 
 }

@@ -17,12 +17,12 @@ public class CareeController {
     @Autowired
     CareeService careeService;
 
-    @GetMapping
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Optional<Caree>> getCareeById(@PathVariable Long id){
         return new ResponseEntity<>(careeService.findCareeById(id), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/{uniqueCode}")
     public ResponseEntity<List<Caree>> getCareeByUniqueCode(@PathVariable String uniqueCode){
         return new ResponseEntity<>(careeService.findCareeByUniqueCode(uniqueCode), HttpStatus.OK);
     }

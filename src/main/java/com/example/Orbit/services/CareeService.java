@@ -47,7 +47,7 @@ public class CareeService {
         updatedCaree.setName(caree.getName());
         updatedCaree.setAge(caree.getAge());
         updatedCaree.setBio(caree.getBio());
-        updatedCaree.setNeedsList(caree.getNeedsList());
+        updatedCaree.setToDoList(caree.getToDoList());
         careeRepository.save(updatedCaree);
         return updatedCaree;
     }

@@ -96,4 +96,12 @@ public class User {
     public void setToDoList(List<Need> toDoList) {
         this.toDoList = toDoList;
     }
+
+    public List<Caree> getCareeListBelongingToUser() {
+        return careeListBelongingToUser;
+    }
+
+    public void setCareeListBelongingToUser(List<Caree> careeListBelongingToUser) {
+        this.careeListBelongingToUser = careeListBelongingToUser;
+    }
 }
