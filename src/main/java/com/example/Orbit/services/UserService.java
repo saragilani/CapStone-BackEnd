@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-
 @Service
 public class UserService {
 
@@ -18,12 +17,15 @@ public class UserService {
     @Autowired
     CareeRepository careeRepository;
 
-    public void addUser(User user){
+    public User createUser(User user){
         userRepository.save(user);
+
+        return user;
     }
 
-    public List<User> getUserById(Long id) {
-        return userRepository.findById();
+    public Optional <User> getUserById(Long id) {
+
+        return userRepository.findById(id);
     }
 
     public User updateUser(User user, Long id){
@@ -37,7 +39,6 @@ public class UserService {
     }
 
     public void deleteUser(Long id){
-        Optional<User> user = userRepository.findById(id);
         userRepository.deleteById(id);
     }
 
