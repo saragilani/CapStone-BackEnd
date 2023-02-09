@@ -44,10 +44,24 @@ public class CareeService {
 
     public Caree updateCaree(Long id, Caree caree) {
         Caree updatedCaree = careeRepository.findById(id).get();
-        updatedCaree.setName(caree.getName());
-        updatedCaree.setAge(caree.getAge());
-        updatedCaree.setBio(caree.getBio());
-        updatedCaree.setToDoList(caree.getToDoList());
+
+        if(caree.getName() != null){
+            updatedCaree.setName(caree.getName());
+        }
+
+        if(caree.getAge() != 0 && caree.getAge() <200 ){
+            updatedCaree.setAge(caree.getAge());
+        }
+
+        if(caree.getBio() !=null){
+            updatedCaree.setBio(caree.getBio());
+        }
+
+        if (caree.getToDoList() != null){
+            updatedCaree.setToDoList(caree.getToDoList());
+
+        }
+
         careeRepository.save(updatedCaree);
         return updatedCaree;
     }
