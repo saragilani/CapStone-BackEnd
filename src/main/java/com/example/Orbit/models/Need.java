@@ -31,10 +31,12 @@ public class Need {
     @JoinColumn(name = "caree_id")
     Caree caree;
 
-    public Need(String name, String description, Boolean completed){
+    public Need(String name, String description, Boolean completed, Caree caree){
         this.name = name;
         this.description = description;
         this.completed = completed;
+        this.caree = caree;
+        this.user = null;
     }
 
     public Need(){}
