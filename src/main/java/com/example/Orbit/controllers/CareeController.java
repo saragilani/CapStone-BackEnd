@@ -18,11 +18,11 @@ public class CareeController {
     CareeService careeService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<Caree>> getCareeById(@PathVariable Long id){
+    public ResponseEntity<Caree> getCareeById(@PathVariable Long id){
         return new ResponseEntity<>(careeService.findCareeById(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{uniqueCode}")
+    @GetMapping(value = "/unique-code/{uniqueCode}")
     public ResponseEntity<List<Caree>> getCareeByUniqueCode(@PathVariable String uniqueCode){
         return new ResponseEntity<>(careeService.findCareeByUniqueCode(uniqueCode), HttpStatus.OK);
     }

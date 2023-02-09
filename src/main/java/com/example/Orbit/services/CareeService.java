@@ -25,8 +25,8 @@ public class CareeService {
 
 
     // UpdateCaree, deleteCaree, createCaree, findCareeById(), findCareeByUniqueCode()
-    public Optional<Caree> findCareeById(Long id) {
-        return careeRepository.findById(id);
+    public Caree findCareeById(Long id) {
+        return careeRepository.findById(id).get();
     }
 
     public List<Caree> findCareeByUniqueCode(String uniqueCode) {
