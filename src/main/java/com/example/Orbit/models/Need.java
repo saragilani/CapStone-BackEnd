@@ -27,6 +27,7 @@ public class Need {
     @JoinColumn(name = "user_id")
     User user;
 
+    @JsonIgnoreProperties("needs")
     @ManyToOne
     @JoinColumn(name = "caree_id")
     Caree caree;

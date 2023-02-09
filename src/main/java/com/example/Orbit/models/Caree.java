@@ -32,6 +32,7 @@ public class Caree {
 //    private List<Need> needsList;
     private List<Need> toDoList;
 
+    @JsonIgnoreProperties("caree")
     @ManyToMany(mappedBy = "careeListBelongingToUser")
     private List<User> authorisedUsers;
 
