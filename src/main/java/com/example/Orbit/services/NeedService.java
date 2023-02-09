@@ -37,11 +37,26 @@ public class NeedService {
     // updating need
     public Need updateNeed(Need need, Long id){
         Need updatedNeed = needRepository.findById(id).get();
-        updatedNeed.setName(need.getName());
-        updatedNeed.setDescription(need.getDescription());
-        updatedNeed.setCompleted(need.getCompleted());
-        updatedNeed.setUser(need.getUser());
-        updatedNeed.setCaree(need.getCaree());
+        if(need.getName() != null ){
+            updatedNeed.setName(need.getName());
+        }
+
+        if(need.getDescription() != null){
+            updatedNeed.setDescription(need.getDescription());
+        }
+
+        if(need.getCompleted() != null){
+            updatedNeed.setCompleted(need.getCompleted());
+        }
+
+        if(need.getUser() != null) {
+            updatedNeed.setUser(need.getUser());
+        }
+
+        if(need.getCaree() != null){
+            updatedNeed.setCaree(need.getCaree());
+        }
+
         needRepository.save(updatedNeed);
         return updatedNeed;
     }

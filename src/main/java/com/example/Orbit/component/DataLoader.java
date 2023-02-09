@@ -68,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
 
         Need need_5  = new Need("read book for 1hr to Franziska for course", "book is found on bookshelf in bedroom or living room read on Thursday",false, caree_1);
 
-        needRepository.saveAll(List.of(need_1, need_2, need_3, need_4, need_5)); 
+        needRepository.saveAll(List.of(need_1, need_2, need_3, need_4, need_5));
     }
 
 }
