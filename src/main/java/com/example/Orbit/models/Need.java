@@ -31,4 +31,59 @@ public class Need {
     @JoinColumn(name = "caree_id")
     Caree caree;
 
+    public Need(String name, String description, Boolean completed){
+        this.name = name;
+        this.description = description;
+        this.completed = completed;
+    }
+
+    public Need(){}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Caree getCaree() {
+        return caree;
+    }
+
+    public void setCaree(Caree caree) {
+        this.caree = caree;
+    }
 }
