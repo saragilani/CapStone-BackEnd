@@ -24,8 +24,8 @@ public class NeedService {
     CareeRepository careeRepository;
 
     // finding a need by id
-    public Optional<Need> findNeedById(Long id){
-        return needRepository.findById(id);
+    public Need findNeedById(Long id){
+        return needRepository.findById(id).get();
     }
 
     // creating a new need
@@ -65,7 +65,7 @@ public class NeedService {
         return need;
     }
 
-    // assign need t
+    // assigning a need to caree
 
 
 }
