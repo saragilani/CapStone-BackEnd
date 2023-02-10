@@ -22,12 +22,12 @@ public class Need {
     @Column(name = "completed")
     private Boolean completed;
 
-    @JsonIgnoreProperties("needs")
+    @JsonIgnoreProperties("toDoList")
     @ManyToOne
     @JoinColumn(name = "user_id")
     User user;
 
-    @JsonIgnoreProperties("needs")
+    @JsonIgnoreProperties("toDoList")
     @ManyToOne
     @JoinColumn(name = "caree_id")
     Caree caree;

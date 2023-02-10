@@ -32,12 +32,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Need> toDoList;
 
-    @ManyToMany
-    @JoinTable(
-            name="linked_carees_and_users",
-            joinColumns = @JoinColumn(name = "caree_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<Caree> careeListBelongingToUser;
+//    @ManyToMany
+//    @JoinTable(
+//            name="linked_carees_and_users",
+//            joinColumns = @JoinColumn(name = "caree_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    private List<Caree> careeListBelongingToUser;
 
     //
     public User(String name, String password, String emailAddress, String location){
@@ -97,11 +97,11 @@ public class User {
         this.toDoList = toDoList;
     }
 
-    public List<Caree> getCareeListBelongingToUser() {
-        return careeListBelongingToUser;
-    }
-
-    public void setCareeListBelongingToUser(List<Caree> careeListBelongingToUser) {
-        this.careeListBelongingToUser = careeListBelongingToUser;
-    }
+//    public List<Caree> getCareeListBelongingToUser() {
+//        return careeListBelongingToUser;
+//    }
+//
+//    public void setCareeListBelongingToUser(List<Caree> careeListBelongingToUser) {
+//        this.careeListBelongingToUser = careeListBelongingToUser;
+//    }
 }
