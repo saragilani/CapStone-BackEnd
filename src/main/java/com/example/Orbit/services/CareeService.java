@@ -23,6 +23,9 @@ public class CareeService {
     @Autowired
     CareeRepository careeRepository;
 
+    public List<Caree> getAllCarees(){
+        return careeRepository.findAll();
+    }
 
     // UpdateCaree, deleteCaree, createCaree, findCareeById(), findCareeByUniqueCode()
     public Caree findCareeById(Long id) {

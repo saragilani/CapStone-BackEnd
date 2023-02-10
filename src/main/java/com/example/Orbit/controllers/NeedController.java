@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/needs")
 public class NeedController {
@@ -18,6 +20,12 @@ public class NeedController {
 
     @Autowired
     UserService userService;
+
+    @GetMapping
+    public ResponseEntity<List<Need>> getAllNeeds(){
+        List<Need>needs = needService.getAllNeeds();
+        return new ResponseEntity<>(needs, HttpStatus.OK);
+    }
 
     // Getting need by id
     @GetMapping(value = "/{id}")

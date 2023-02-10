@@ -17,6 +17,12 @@ public class CareeController {
     @Autowired
     CareeService careeService;
 
+    @GetMapping
+    public ResponseEntity<List<Caree>> getAllCarees(){
+        List<Caree> carees = careeService.getAllCarees();
+        return new ResponseEntity<>(carees, HttpStatus.OK);
+    }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<Caree> getCareeById(@PathVariable Long id){
         return new ResponseEntity<>(careeService.findCareeById(id), HttpStatus.OK);

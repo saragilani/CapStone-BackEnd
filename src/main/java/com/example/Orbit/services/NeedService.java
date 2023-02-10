@@ -24,6 +24,9 @@ public class NeedService {
     @Autowired
     CareeRepository careeRepository;
 
+    public List<Need> getAllNeeds(){
+        return needRepository.findAll();
+    }
     // finding a need by id
     public Need findNeedById(Long id){
         return needRepository.findById(id).get();
