@@ -75,10 +75,11 @@ public class NeedService {
         Need need = needRepository.findById(need_id).get();
         User user = userRepository.findById(user_id).get();
         need.setUser(user);
-        List<Need> toDoList = user.getToDoList();
-        toDoList.add(need);
-        user.setToDoList(toDoList);
-        userRepository.save(user);
+//        List<Need> toDoList = user.getToDoList();
+//        toDoList.add(need);
+//        user.setToDoList(toDoList);
+        needRepository.save(need);
+//        userRepository.save(user);
         return need;
     }
 
