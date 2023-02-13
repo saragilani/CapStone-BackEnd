@@ -33,9 +33,9 @@ public class Caree {
 //    private List<Need> needsList;
     private List<Need> toDoList;
 
-//    @JsonIgnoreProperties("caree")
-//    @ManyToMany(mappedBy = "careeListBelongingToUser")
-//    private List<User> authorisedUsers;
+    @JsonIgnoreProperties("carees")
+    @ManyToMany(mappedBy = "carees")
+    private List<User> authorisedUsers;
 
     public Caree(String name, int age, String bio){
         this.name = name;
@@ -43,6 +43,7 @@ public class Caree {
         this.bio = bio;
         this.uniqueCode = UUID.randomUUID().toString();
         this.toDoList = new ArrayList<>();
+        this.authorisedUsers = new ArrayList<>();
     }
 
     public Caree(){}
@@ -95,13 +96,13 @@ public class Caree {
         this.toDoList = toDoList;
     }
 
-//    public List<User> getAuthorisedUsers() {
-//        return authorisedUsers;
-//    }
-//
-//    public void setAuthorisedUsers(List<User> authorisedUsers) {
-//        this.authorisedUsers = authorisedUsers;
-//    }
+    public List<User> getAuthorisedUsers() {
+        return authorisedUsers;
+    }
+
+    public void setAuthorisedUsers(List<User> authorisedUsers) {
+        this.authorisedUsers = authorisedUsers;
+    }
     //    public List<Need> getNeedsList() {
 //        return needsList;
 //    }

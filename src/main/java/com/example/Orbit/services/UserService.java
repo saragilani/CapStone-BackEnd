@@ -46,6 +46,11 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    // add caree to user
+    // get user id and caree id, authorise by adding to authorised list
+    // check if user authorised before assigning needs
+    // add authorisation layer later
+
 
 
 

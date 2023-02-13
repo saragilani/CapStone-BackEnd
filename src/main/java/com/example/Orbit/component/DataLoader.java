@@ -59,6 +59,9 @@ public class DataLoader implements ApplicationRunner {
         careeRepository.saveAll(List.of(caree_1, caree_2, caree_3, caree_4, caree_5));
 
         Need need_1  = new Need("food shop", "buy eggs, milk, bread by Wednesday",false,caree_1);
+        Need need_6  = new Need("buy fish", "need pet fish",false,caree_1);
+        need_1.setUser(user_1);
+        need_6.setUser(user_2);
 
         Need need_2  = new Need("take to appointment", "Monday hospital appointment at 12",false, caree_2);
 
@@ -68,7 +71,10 @@ public class DataLoader implements ApplicationRunner {
 
         Need need_5  = new Need("read book for 1hr to Franziska for course", "book is found on bookshelf in bedroom or living room read on Thursday",false, caree_5);
 
-        needRepository.saveAll(List.of(need_1, need_2, need_3, need_4, need_5));
+        needRepository.saveAll(List.of(need_1, need_2, need_3, need_4, need_5, need_6));
+
+        List<User> usersForCaree = userRepository.findAllByToDoListCareeId(caree_1.getId());
+        System.out.println("yo");
     }
 
 }

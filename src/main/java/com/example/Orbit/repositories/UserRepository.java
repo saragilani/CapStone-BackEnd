@@ -16,5 +16,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     List<User> findUserByName(String name);
 
+    List<User> findAllByToDoListCareeId(Long careeId);
+
 //    List<User> findUserByCaree(List<Caree> careeList);
 }

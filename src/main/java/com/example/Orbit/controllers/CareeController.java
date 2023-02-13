@@ -24,7 +24,7 @@ public class CareeController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Caree> getCareeById(@RequestParam Long id){
+    public ResponseEntity<Caree> getCareeById(@RequestBody Long id){
         return new ResponseEntity<>(careeService.findCareeById(id), HttpStatus.OK);
     }
 
