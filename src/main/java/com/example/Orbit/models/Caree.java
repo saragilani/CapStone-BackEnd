@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity(name = "carees")
 public class Caree {
@@ -36,11 +37,11 @@ public class Caree {
 //    @ManyToMany(mappedBy = "careeListBelongingToUser")
 //    private List<User> authorisedUsers;
 
-    public Caree(String name, int age, String bio, String uniqueCode){
+    public Caree(String name, int age, String bio){
         this.name = name;
         this.age = age;
         this.bio = bio;
-        this.uniqueCode = uniqueCode;
+        this.uniqueCode = UUID.randomUUID().toString();
         this.toDoList = new ArrayList<>();
     }
 

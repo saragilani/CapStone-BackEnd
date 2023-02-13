@@ -45,15 +45,15 @@ public class DataLoader implements ApplicationRunner {
         userRepository.saveAll(List.of(user_1, user_2, user_3, user_4, user_5));
 
 
-        Caree caree_1 = new Caree("Carol", 79, "Em's Nan", "1234");
+        Caree caree_1 = new Caree("Carol", 79, "Em's Nan");
 
-        Caree caree_2 = new Caree("Bob",  85, "Berna's uncle", "1234");
+        Caree caree_2 = new Caree("Bob",  85, "Berna's uncle");
 
-        Caree caree_3 = new Caree("Lily", 20, "Sara's friend", "1234");
+        Caree caree_3 = new Caree("Lily", 20, "Sara's friend");
 
-        Caree caree_4 = new Caree("Zsolt", 1, "Caitlin's nephew", "1234");
+        Caree caree_4 = new Caree("Zsolt", 1, "Caitlin's nephew");
 
-        Caree caree_5 = new Caree("Franziska", 50, "Saad's family friend", "1234");
+        Caree caree_5 = new Caree("Franziska", 50, "Saad's family friend");
 
 
         careeRepository.saveAll(List.of(caree_1, caree_2, caree_3, caree_4, caree_5));
