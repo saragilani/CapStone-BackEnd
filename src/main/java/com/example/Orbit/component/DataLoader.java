@@ -64,17 +64,22 @@ public class DataLoader implements ApplicationRunner {
         need_6.setUser(user_2);
 
         Need need_2  = new Need("take to appointment", "Monday hospital appointment at 12",false, caree_2);
+        need_2.setUser(user_2);
 
         Need need_3  = new Need("help with laundry", "wash laundry, dry and fold by Tuesday",false, caree_3);
+        need_3.setUser(user_3);
 
         Need need_4  = new Need("collect baby prescription from pharmacy", "collect prescription from BNTA Pharmacy in Holborn on Friday",false, caree_4);
+        need_4.setUser(user_4);
+
 
         Need need_5  = new Need("read book for 1hr to Franziska for course", "book is found on bookshelf in bedroom or living room read on Thursday",false, caree_5);
+        need_5.setUser(user_5);
 
         needRepository.saveAll(List.of(need_1, need_2, need_3, need_4, need_5, need_6));
 
-        List<User> usersForCaree = userRepository.findAllByToDoListCareeId(caree_1.getId());
-        System.out.println("yo");
+//        List<User> usersForCaree = userRepository.findAllByToDoListCareeId(caree_1.getId());
+//        System.out.println("yo");
     }
 
 }
