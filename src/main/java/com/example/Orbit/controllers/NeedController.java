@@ -29,7 +29,7 @@ public class NeedController {
 
     // Getting need by id
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Need> getNeedById(@PathVariable Long id){
+    public ResponseEntity<Need> getNeedById(@RequestParam Long id){
         return new ResponseEntity<>(needService.findNeedById(id), HttpStatus.OK);
     }
 
