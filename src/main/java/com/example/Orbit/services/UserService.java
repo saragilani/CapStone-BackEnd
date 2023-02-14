@@ -32,8 +32,11 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public Optional <User> findUserByEmailAddress(String emailAddress) {
-         return userRepository.findUserByEmailAddress(emailAddress);
+    public User findUserByEmailAddress(String emailAddress) {
+        User foundEmail =  userRepository.findByEmailAddress(emailAddress);
+        System.out.println(foundEmail);
+        return foundEmail;
+
     }
 
     public User updateUser(User user, Long id){
@@ -49,6 +52,12 @@ public class UserService {
     public void deleteUser(Long id){
         userRepository.deleteById(id);
     }
+
+    // userService.checkLogin(email,password)
+    //find user
+    //check if password matches
+    //user.getPassword()
+    // error message if it doesn't match
 
     // add caree to user
     // get user id and caree id, authorise by adding to authorised list

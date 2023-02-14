@@ -38,10 +38,22 @@ public class UserController {
 
     }
 
-    @PostMapping (value="/emailAddress")
+    @GetMapping (value="/emailAddress")
     public ResponseEntity<Optional<User>> findUserByEmailAddress(@RequestBody String emailAddress){
-        return new ResponseEntity<>(userService.findUserByEmailAddress(emailAddress), HttpStatus.OK);
+        System.out.println(emailAddress);
+        ResponseEntity checkEmail = new ResponseEntity<>(userService.findUserByEmailAddress(emailAddress), HttpStatus.OK);
+        System.out.println(checkEmail);
+        return checkEmail;
+
     }
+
+    // DTO between service and controller
+    //login DTO
+    // userService.checkLogin(email,password)
+    //find user
+    //check if password matches
+    //user.getPassword()
+    // error message if it doesn't match
 
 
     @PatchMapping (value = "/{id}")
