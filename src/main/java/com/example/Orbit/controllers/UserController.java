@@ -47,6 +47,11 @@ public class UserController {
 
     }
 
+//    public User checkLogin(User user) {
+//        User checkingpassword = loginDTO.getUserPassword();
+//        User checkingemail = loginDTO.getUserEmailAddress();
+//    }
+
     // DTO between service and controller
     //login DTO
     // userService.checkLogin(email,password)

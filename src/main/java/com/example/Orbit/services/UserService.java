@@ -17,6 +17,7 @@ public class UserService {
     @Autowired
     CareeRepository careeRepository;
 
+
     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
@@ -52,6 +53,8 @@ public class UserService {
     public void deleteUser(Long id){
         userRepository.deleteById(id);
     }
+
+
 
     // userService.checkLogin(email,password)
     //find user
