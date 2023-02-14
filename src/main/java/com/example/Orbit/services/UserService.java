@@ -54,14 +54,14 @@ public class UserService {
     }
 
     public User checkLogin(String emailAddress, String password){
-        User emailDB = userRepository.findByEmailAddress(emailAddress);
-        User passwordDB = userRepository.findByPassword(password);
-
-        if ((emailDB.getEmailAddress() == emailAddress) && (passwordDB.getPassword() == password)) {
-            return emailDB;
+        User foundUser = userRepository.findByEmailAddress(emailAddress);
+        if (foundUser == null){
+            return null;
         }
-        // password
-        return emailDB;
+        if (foundUser.getPassword().equals(password)) {
+            return foundUser;
+        }
+        return null;
     }
 
     // userService.checkLogin(email,password)

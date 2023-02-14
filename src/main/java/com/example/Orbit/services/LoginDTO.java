@@ -2,29 +2,29 @@ package com.example.Orbit.services;
 
 public class LoginDTO {
 
-    private String userPassword;
-    private String userEmailAddress;
+    private String password;
+    private String emailAddress;
 
-    public LoginDTO (String userPassword, String userEmailAddress){
-        this.userEmailAddress = userEmailAddress;
-        this.userPassword = userPassword;
+    public LoginDTO (String password, String emailAddress){
+        this.emailAddress = emailAddress;
+        this.password = password;
     }
 
     public LoginDTO(){}
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserEmailAddress() {
-        return userEmailAddress;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setUserEmailAddress(String userEmailAddress) {
-        this.userEmailAddress = userEmailAddress;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 }

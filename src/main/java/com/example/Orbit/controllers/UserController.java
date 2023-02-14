@@ -50,10 +50,13 @@ public class UserController {
 
     @PostMapping (value = "/login")
     public ResponseEntity<User> checkLogin(@RequestBody LoginDTO loginDTO){
-        String password = loginDTO.getUserPassword();
-        String emailAddress = loginDTO.getUserEmailAddress();
-        User loginData = userService.checkLogin(password, emailAddress);
-        return new ResponseEntity<>(loginData, HttpStatus.OK);
+        String password = loginDTO.getPassword();
+        String emailAddress = loginDTO.getEmailAddress();
+        User loggedInUser = userService.checkLogin(emailAddress, password);
+        if (loggedInUser == null){
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+        }
+        return new ResponseEntity<>(loggedInUser, HttpStatus.OK);
     }
 
     // DTO between service and controller
