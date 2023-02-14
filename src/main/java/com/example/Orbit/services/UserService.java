@@ -1,5 +1,4 @@
 package com.example.Orbit.services;
-import com.example.Orbit.models.Caree;
 import com.example.Orbit.models.User;
 import com.example.Orbit.repositories.CareeRepository;
 import com.example.Orbit.repositories.UserRepository;
@@ -54,7 +53,16 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public User checkLogin(String emailAddress, String password){
+        User emailDB = userRepository.findByEmailAddress(emailAddress);
+        User passwordDB = userRepository.findByPassword(password);
 
+        if ((emailDB.getEmailAddress() == emailAddress) && (passwordDB.getPassword() == password)) {
+            return emailDB;
+        }
+        // password
+        return emailDB;
+    }
 
     // userService.checkLogin(email,password)
     //find user

@@ -2,6 +2,7 @@ package com.example.Orbit.controllers;
 
 import com.example.Orbit.models.Caree;
 import com.example.Orbit.models.User;
+import com.example.Orbit.services.LoginDTO;
 import com.example.Orbit.services.UserService;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,10 +48,13 @@ public class UserController {
 
     }
 
-//    public User checkLogin(User user) {
-//        User checkingpassword = loginDTO.getUserPassword();
-//        User checkingemail = loginDTO.getUserEmailAddress();
-//    }
+    @PostMapping (value = "/login")
+    public ResponseEntity<User> checkLogin(@RequestBody LoginDTO loginDTO){
+        String password = loginDTO.getUserPassword();
+        String emailAddress = loginDTO.getUserEmailAddress();
+        User loginData = userService.checkLogin(password, emailAddress);
+        return new ResponseEntity<>(loginData, HttpStatus.OK);
+    }
 
     // DTO between service and controller
     //login DTO
