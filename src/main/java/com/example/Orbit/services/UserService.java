@@ -32,6 +32,10 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public Optional <User> findUserByEmailAddress(String emailAddress) {
+         return userRepository.findUserByEmailAddress(emailAddress);
+    }
+
     public User updateUser(User user, Long id){
         User userToUpdate = userRepository.findById(id).get();
 

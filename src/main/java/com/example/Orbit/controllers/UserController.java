@@ -3,6 +3,7 @@ package com.example.Orbit.controllers;
 import com.example.Orbit.models.Caree;
 import com.example.Orbit.models.User;
 import com.example.Orbit.services.UserService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,11 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody User user) {
         return new ResponseEntity<>(userService.createUser(user), HttpStatus.OK);
 
+    }
+
+    @PostMapping (value="/emailAddress")
+    public ResponseEntity<Optional<User>> findUserByEmailAddress(@RequestBody String emailAddress){
+        return new ResponseEntity<>(userService.findUserByEmailAddress(emailAddress), HttpStatus.OK);
     }
 
 

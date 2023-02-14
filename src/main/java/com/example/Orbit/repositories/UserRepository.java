@@ -4,6 +4,7 @@ import com.example.Orbit.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
@@ -15,6 +16,10 @@ public interface UserRepository extends JpaRepository<User,Long> {
     List<User> findUserByLocation(String location);
 
     List<User> findUserByName(String name);
+
+    Optional<User> findUserByEmailAddress(String emailAddress);
+
+    List<User> findUserByPassword(String password);
 
     List<User> findAllByToDoListCareeId(Long careeId);
 
