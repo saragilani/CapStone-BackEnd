@@ -24,12 +24,12 @@ public class CareeController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Caree> getCareeById(@RequestBody Long id){
+    public ResponseEntity<Caree> getCareeById(@PathVariable Long id){
         return new ResponseEntity<>(careeService.findCareeById(id), HttpStatus.OK);
     }
 
     @GetMapping(value = "/unique-code{uniqueCode}")
-    public ResponseEntity<List<Caree>> getCareeByUniqueCode(@RequestParam String uniqueCode){
+    public ResponseEntity<List<Caree>> getCareeByUniqueCode(@PathVariable String uniqueCode){
         return new ResponseEntity<>(careeService.findCareeByUniqueCode(uniqueCode), HttpStatus.OK);
     }
 
@@ -44,7 +44,7 @@ public class CareeController {
     }
 
     @DeleteMapping (value = "/{id}")
-    public ResponseEntity deleteCaree(@RequestParam Long id) {
+    public ResponseEntity deleteCaree(@PathVariable Long id) {
         careeService.deleteCaree(id);
         return new ResponseEntity("You successfully deleted the caree", HttpStatus.OK);
     }
