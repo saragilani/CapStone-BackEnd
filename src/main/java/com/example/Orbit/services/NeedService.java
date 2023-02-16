@@ -74,8 +74,8 @@ public class NeedService {
     // might need to move this into the user repository
     // as we want to return user/todolist of user rather than need
     // should test it out first and see
-    public Need assignNeedToUser(Long need_id, Long user_id){
-        Need need = needRepository.findById(need_id).get();
+    public Need assignNeedToUser(Need need, Long user_id){
+//        Need need = needRepository.findById(need).get();
         User user = userRepository.findById(user_id).get();
         need.setUser(user);
 //        List<Need> toDoList = user.getToDoList();

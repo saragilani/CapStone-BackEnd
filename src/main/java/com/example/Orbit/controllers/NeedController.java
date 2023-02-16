@@ -53,9 +53,9 @@ public class NeedController {
     }
 
     // Assigning a need to a user
-    @PatchMapping(value = "/{need_id}/{user_id}")
-    public ResponseEntity<Need> addingNeedToUser(@PathVariable Long need_id, @PathVariable Long user_id){
-        Need needAssigned = needService.assignNeedToUser(need_id, user_id);
+    @PatchMapping(value = "/{user_id}")
+    public ResponseEntity<Need> addingNeedToUser(@RequestBody Need need, @PathVariable Long user_id){
+        Need needAssigned = needService.assignNeedToUser(need, user_id);
         return new ResponseEntity<>(needAssigned, HttpStatus.OK);
     }
 
