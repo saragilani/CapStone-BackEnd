@@ -48,8 +48,8 @@ Create a local database named 'orbit':
   createdb orbit
 ```
 Ensure postgresql is also installed using this command:
-```a
-    brew install postgresql
+```
+  brew install postgresql
 ```
 
 You can now open the API within intelliJ and run it in the file named 'OrbitApplication'
