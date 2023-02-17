@@ -79,7 +79,7 @@ Here we see the structure in which we designed the API to allow us to manipulate
 |:-----------------:|:-------------|:-------------------|
 |     .../user      | GET          | Display all users  |
 |    .../user/1     | GET          | Find user by id    |
-|   .../carees/1    | POST         | Add new user       |
+|     .../users     | POST         | Add new user       |
 |    .../user/1     | DELETE       | Delete user        |
 |    .../user/1     | PATCH        | Update user        |
 |    .../carees     | GET          | Display all carees |
