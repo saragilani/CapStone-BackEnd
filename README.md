@@ -68,6 +68,7 @@ The classes `User` and `Caree` will be connected via the many-to-many relationsh
 
 <img alt="UML" src="https://user-images.githubusercontent.com/68750584/219558998-030767ec-eca4-4c51-808f-b25966e0f809.png"/>
 
+
 Here we see the structure in which we designed the API to allow us to manipulate the classes within our database. Included is a `controller`, `service`, `model` and `repository` class each for `Caree`, `Need` and `User`. 
 
 ## Routes 
