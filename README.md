@@ -4,7 +4,7 @@
 
 ---
 
-This is the backend of our teams capstone project 'Orbit'. It is a platform designed to help users (carers) organise and manage the needs individuals under their care and allows a collaborative capabalility with other family members that also care for that individual.
+This is the backend of our teams capstone project 'Orbit'. It is a platform designed to help users (carers) organise and manage the needs of individuals under their care and allows a collaborative capabalility with other family members that also care for that individual.
 
 The platform allows users to set up profiles for individuals under their care. 
 - The caree profiles have important information about the individual including a bio, and `needsList`.
